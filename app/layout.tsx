@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import ThemeProvider from "@/components/provider/theme-provider";
+import ThemeProvider from "@/components/providers/theme-provider";
 import "./globals.css";
+import FontProvider from "@/components/providers/font-provider";
 
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Dictionary Web App",
@@ -21,9 +20,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark:bg-absolute-dark bg-white">
-      <body className={inter.className}>
+      <FontProvider>
         <ThemeProvider>{children}</ThemeProvider>
-      </body>
+      </FontProvider>
     </html>
   );
 }
