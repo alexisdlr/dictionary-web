@@ -1,12 +1,15 @@
-import Image from 'next/image'
-import React from 'react'
 
-const PlayButton = ({audio}: {audio: string}) => {
+const PlayButton = ({ audio }: { audio: string }) => {
+  const handleClick = () => {
+    const audioElement = new Audio(audio);
+    audioElement.play();
+  };
+
   return (
-    <button >
-      <Image src="/assets/images/icon-play.svg" alt="icon play" width={50} height={50} />
+    <button onClick={handleClick}>
+      <img src="/assets/images/icon-play.svg" alt="icon play" width={50} height={50} />
     </button>
-  )
-}
+  );
+};
 
-export default PlayButton
+export default PlayButton;

@@ -10,7 +10,7 @@ import { DictionaryEntry as DictionaryEntryType } from "@/types";
 import { useState } from "react";
 
 export default function Home() {
-  const [result, setResult] = useState<any[]>([]);
+  const [result, setResult] = useState<DictionaryEntryType[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<any>(null);
 

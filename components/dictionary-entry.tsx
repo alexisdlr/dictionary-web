@@ -6,6 +6,10 @@ import Link from "next/link";
 import Image from "next/image";
 
 const DictionaryEntry = ({ entry }: { entry: DictionaryEntryType }) => {
+  const firstAudioUrl =
+    entry.phonetics.length > 0 ? entry.phonetics.filter((phonetic) => phonetic.audio)[0].audio : "";
+
+   
   return (
     <>
       <div
@@ -19,7 +23,7 @@ const DictionaryEntry = ({ entry }: { entry: DictionaryEntryType }) => {
             </h3>
             <p className="text-purple">{entry.phonetic}</p>
           </div>
-          <PlayButton audio="" />
+          <PlayButton audio={firstAudioUrl} />
         </div>
 
         {entry.meanings.map((meaning, index) => (
