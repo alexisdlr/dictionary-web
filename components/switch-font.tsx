@@ -34,7 +34,7 @@ export default function SwitchFont() {
             <Menu.Item>
               <button
                 onClick={() => changeFont("inter")}
-                className={Inter.className}
+                className={`hover:text-purple transition-all ${Inter.className}`}
               >
                 Inter
               </button>
@@ -42,7 +42,7 @@ export default function SwitchFont() {
             <Menu.Item>
               <button
                 onClick={() => changeFont("lora")}
-                className={Lora.className}
+                className={`hover:text-purple transition-all ${Lora.className}`}
               >
                 Lora
               </button>
@@ -50,7 +50,7 @@ export default function SwitchFont() {
             <Menu.Item>
               <button
                 onClick={() => changeFont("inconsolata")}
-                className={Inconsolata.className}
+                className={`hover:text-purple transition-all ${Inconsolata.className}`}
               >
                 Inconsolata
               </button>

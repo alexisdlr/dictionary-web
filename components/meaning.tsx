@@ -17,10 +17,10 @@ const Meaning = ({ meaning }: { meaning: MeaningType }) => {
       {meaning.synonyms.length > 0 && (
         <div className="flex flex-col gap-2 mt-4">
           <p className="text-purple mb-3 font-bold">
-            <span className="text-rich-black dark:text-silver font-normal">
+            <span className="text-rich-black dark:text-silver font-normal mr-4">
               Synonyms
             </span>
-            : {meaning.synonyms.join(', ')}{" "}
+             {meaning.synonyms.join(', ')}{" "}
           </p>
         </div>
       )}
