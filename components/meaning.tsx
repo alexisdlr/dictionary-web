@@ -5,11 +5,11 @@ import Definition from "./definition";
 const Meaning = ({ meaning }: { meaning: MeaningType }) => {
   return (
     <div className="flex flex-col gap-2">
-      <h4 className="text-2xl font-bold dark:text-white-smoke text-rich-black my-6 italic">
-        {meaning.partOfSpeech}
+      <h4 className="text-xl md:text-2xl font-bold dark:text-white-smoke text-rich-black my-3 md:my-6 italic flex items-center gap-4 md:block">
+        {meaning.partOfSpeech} <div className="w-full h-px bg-light-gray dark:bg-silver md:hidden" />
       </h4>
       <p className="text-silver mb-3">Meaning</p>
-      <ul className="px-5">
+      <ul className="px-0 md:px-5 flex flex-col items-start gap-4">
         {meaning.definitions.map((definition, index) => (
           <Definition key={index} def={definition} />
         ))}

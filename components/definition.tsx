@@ -7,7 +7,7 @@ type DefinitionProps = {
 
 const Definition = ({ def }: DefinitionProps) => {
   return (
-    <li className="flex items-center gap-x-4 mt-4">
+    <li className="flex items-center gap-x-4 ">
       <div>
         <div className="size-1 relative bg-purple rounded-full" />
       </div>
