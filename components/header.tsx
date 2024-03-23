@@ -1,3 +1,4 @@
+"use client"
 import Image from "next/image";
 import SwitchFont from "./switch-font";
 import SwitchTheme from "./switch-theme";
@@ -13,9 +14,9 @@ const Header = () => {
           height={36}
         />
       </div>
-      <div className="flex gap-2 items-center">
+      <div className="flex gap-x-4 items-center">
         <SwitchFont />
-        <div className="w-px h-10 bg-light-gray"></div>
+        <div className="w-px h-8 bg-light-gray"></div>
         <SwitchTheme />
       </div>
       

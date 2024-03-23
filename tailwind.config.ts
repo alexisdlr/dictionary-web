@@ -6,8 +6,7 @@ const config: Config = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  darkMode: 'class',
-
+  darkMode: "class",
   theme: {
     extend: {
       screens: {
@@ -18,11 +17,11 @@ const config: Config = {
         "rich-black": "#2D2D2D",
         "pitch-black": "#1F1F1F",
         "dim-gray": "#3A3A3A",
-        "silver": "#757575",
+        silver: "#757575",
         "light-gray": "#E9E9E9",
         "white-smoke": "#F4F4F4",
-        "purple": "#A445ED",
-        "red-dark": "#FF5252"
+        purple: "#A445ED",
+        "red-dark": "#FF5252",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
