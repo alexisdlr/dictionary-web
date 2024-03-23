@@ -9,7 +9,6 @@ interface ThemeProviderProps {
 
 const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
   const { darkMode } = useThemeStore();
-  console.log(darkMode)
   return (
     <div className={`${darkMode ? "dark" : ""} w-full h-full transition`}>
       {children}

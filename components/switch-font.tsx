@@ -4,8 +4,8 @@ import { Fragment } from "react";
 
 export default function SwitchFont() {
   return (
-    <Menu as="div" className="relative inline-block text-left">
-      <Menu.Button className="inline-flex w-full gap-x-2 items-center rounded-md px-4 py-2 text-sm font-medium dark:text-white  focus:outline-none transition-all">
+    <Menu as="div" className="relative text-left">
+      <Menu.Button className="inline-flex w-full gap-x-2 items-center rounded-md text-sm font-medium dark:text-white transition-all outline-none border-none">
         Font{" "}
         <Image
           src="/assets/images/icon-arrow-down.svg"
