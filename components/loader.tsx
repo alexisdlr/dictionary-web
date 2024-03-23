@@ -1,18 +1,11 @@
-"use client";
-import { useThemeStore } from "@/store/theme-store";
-import { tailChase } from "ldrs";
-
-tailChase.register();
+import dynamic from 'next/dynamic';
 
 const Loader = () => {
-  const { darkMode } = useThemeStore();
   return (
-    <l-tail-chase
-      size="40"
-      speed="1.75"
-      color={`${darkMode ? "white" : "black"}`}
-    ></l-tail-chase>
+    <DynamicLoader />
   );
 };
+
+const DynamicLoader = dynamic(() => import('./dynamic-loader'), { ssr: false });
 
 export default Loader;
