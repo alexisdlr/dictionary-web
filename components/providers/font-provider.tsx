@@ -12,11 +12,11 @@ const FontProvider = ({ children }: FontProviderProps) => {
 
   const selectedFont = () => {
     switch (font) {
-      case "sans-serif":
+      case "inter":
         return Inter.className;
-      case "serif":
+      case "lora":
         return Lora.className;
-      case "monospace":
+      case "inconsolata":
         return Inconsolata.className;
       default:
         return Inter.className;

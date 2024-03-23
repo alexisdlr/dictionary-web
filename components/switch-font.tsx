@@ -6,11 +6,11 @@ import Image from "next/image";
 import { Fragment } from "react";
 
 export default function SwitchFont() {
-  const { changeFont } = useFontStore();
+  const { font, changeFont } = useFontStore();
   return (
     <Menu as="div" className="relative text-left">
-      <Menu.Button className="inline-flex w-full gap-x-2 items-center rounded-md text-sm font-medium dark:text-white transition-all outline-none border-none">
-        Font{" "}
+      <Menu.Button className="inline-flex w-full gap-x-2 items-center rounded-md text-sm dark:text-white transition-all outline-none border-none font-bold">
+        {font.charAt(0).toUpperCase() + font.slice(1)}{" "}
         <Image
           src="/assets/images/icon-arrow-down.svg"
           alt="icon arrow down"
@@ -32,15 +32,15 @@ export default function SwitchFont() {
           <div className="px-5 py-3 flex flex-col gap-y-3 items-start text-sm">
             <Menu.Item>
               <button
-                onClick={() => changeFont("sans-serif")}
+                onClick={() => changeFont("inter")}
                 className={Inter.className}
               >
-               Inter
+                Inter
               </button>
             </Menu.Item>
             <Menu.Item>
               <button
-                onClick={() => changeFont("serif")}
+                onClick={() => changeFont("lora")}
                 className={Lora.className}
               >
                 Lora
@@ -48,7 +48,7 @@ export default function SwitchFont() {
             </Menu.Item>
             <Menu.Item>
               <button
-                onClick={() => changeFont("monospace")}
+                onClick={() => changeFont("inconsolata")}
                 className={Inconsolata.className}
               >
                 Inconsolata

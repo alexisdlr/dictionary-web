@@ -2,14 +2,14 @@ import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
 interface FontStore {
-  font: 'sans-serif' | 'serif' | 'monospace';
-  changeFont: (font: 'sans-serif' | 'serif' | 'monospace') => void;
+  font: 'inter' | 'lora' | 'inconsolata';
+  changeFont: (font: 'inter' | 'lora' | 'inconsolata') => void;
 }
 
 export const useFontStore = create<FontStore>()(
   persist(
     (set) => ({
-      font: 'sans-serif',
+      font: 'inter',
       changeFont: (font) => set({ font: font}),
     }),
     {
