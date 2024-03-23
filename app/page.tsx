@@ -1,15 +1,16 @@
-"use client"
+"use client";
 import { searchDictionary } from "@/actions/search-dictionary";
+import DictionaryEntry from "@/components/dictionary-entry";
 import Header from "@/components/header";
-import ResultSearch from "@/components/result-search";
 import SearchInput from "@/components/search-input";
+import { DictionaryEntry as DictionaryEntryType } from "@/types";
 import { useState } from "react";
 
 export default function Home() {
   const [result, setResult] = useState([]);
   const handleSearch = async (query: string) => {
     const data = await searchDictionary(query);
-    setResult(data); 
+    setResult(data);
   };
   return (
     <div className="flex w-full min-h-screen flex-col items-center justify-start p-10 mx-auto dark:bg-absolute-dark bg-white">
@@ -19,7 +20,14 @@ export default function Home() {
           <SearchInput onSearch={handleSearch} />
         </div>
         <main>
-          <ResultSearch data={result} />
+          {!result.length && (
+            <p className="text-center text-2xl dark:text-white-smoke text-black">
+              No results found
+            </p>
+          )}
+          {result.map((entry: DictionaryEntryType) => (
+            <DictionaryEntry key={entry.word} entry={entry} />
+          ))}
         </main>
       </div>
     </div>

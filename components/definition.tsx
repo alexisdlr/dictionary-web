@@ -6,7 +6,6 @@ type DefinitionProps = {
 };
 
 const Definition = ({ def }: DefinitionProps) => {
-  console.log(def);
   return (
     <li className="flex items-center gap-x-4 mt-4">
       <div>
@@ -16,10 +15,8 @@ const Definition = ({ def }: DefinitionProps) => {
         <p className="text-md dark:text-white-smoke text-rich-black">
           {def.definition}
         </p>
-        {def.example !== "" && (
-          <p className="text-sm text-silver">
-            "{def.example}"
-          </p>
+        {def.example && (
+          <p className="text-sm text-silver mt-2">{`"${def.example}"`}</p>
         )}
       </div>
     </li>

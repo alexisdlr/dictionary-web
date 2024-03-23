@@ -5,7 +5,7 @@ import Definition from "./definition";
 const Meaning = ({ meaning }: { meaning: MeaningType }) => {
   return (
     <div className="flex flex-col gap-2">
-      <h4 className="text-2xl font-bold dark:text-white-smoke text-black my-6 italic">
+      <h4 className="text-2xl font-bold dark:text-white-smoke text-rich-black my-6 italic">
         {meaning.partOfSpeech}
       </h4>
       <p className="text-silver mb-3">Meaning</p>
@@ -17,10 +17,10 @@ const Meaning = ({ meaning }: { meaning: MeaningType }) => {
       {meaning.synonyms.length > 0 && (
         <div className="flex flex-col gap-2 mt-4">
           <p className="text-purple mb-3 font-bold">
-            <span className="text-black dark:text-silver font-normal">
+            <span className="text-rich-black dark:text-silver font-normal">
               Synonyms
             </span>
-            : {meaning.synonyms}{" "}
+            : {meaning.synonyms.join(', ')}{" "}
           </p>
         </div>
       )}
