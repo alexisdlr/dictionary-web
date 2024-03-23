@@ -7,6 +7,7 @@ import Loader from "@/components/loader";
 import NotFound from "@/components/not-found";
 import SearchInput from "@/components/search-input";
 import { DictionaryEntry as DictionaryEntryType } from "@/types";
+import Image from "next/image";
 import { useState } from "react";
 
 export default function Home() {
@@ -45,13 +46,22 @@ export default function Home() {
           <SearchInput onSearch={handleSearch} />
         </div>
         <main>
-          {error && (
-           <NotFound error={error} />
-          )}
+          {error && <NotFound error={error} />}
           {!error && !result.length && !loading && (
-            <p className="text-left text-2xl dark:text-white-smoke text-black font-semibold px-2 md:px-4">
-              Welcome to the dictionary! Search for any word to get started.
-            </p>
+            <div className="flex items-center justify-center flex-col gap-4">
+              <p className="text-center text-xl md:text-3xl dark:text-white-smoke text-black font-semibold px-2 md:px-4 max-w-xl">
+                Welcome to the{" "}
+                <span className="text-purple">Web dictionary!</span> Search for
+                any word to get started.
+              </p>
+              <Image
+                src="/assets/images/book.webp"
+                alt="dictionary illustration"
+                width={300}
+                height={300}
+                style={{ backgroundImage: "none" }}
+              />
+            </div>
           )}
           {loading && !error && (
             <div className="flex justify-center items-center h-full w-full dark:text-white-smoke text-black">
